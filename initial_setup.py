@@ -1,7 +1,16 @@
 from printer.models import Settings
+# import argparse
 
 import subprocess as sp
 
+# parser = argparse.ArgumentParser(
+#                     prog='printer-gui',
+#                     description='Django web app for RPi to handle print jobs using a connected CUPS printer.')
+
+# parser.add_argument('-r', '--raspberry', action='store_true')      # option that takes a value
+# parser.add_argument('-n', '--name')  # on/off flag
+
+# args = parser.parse_args()
 
 raspi_commands = [
     'sudo apt install -y cups',
@@ -19,9 +28,8 @@ print("\n================== printer-gui ==================")
 print("Author: Ryan Haas (github.com/haasr/printer-gui)")
 print("=================================================\n")
 
-using_raspi = input("\nUsing Raspberry Pi w/ Pi OS ? (y/n) >")
-
-if using_raspi.lower() == 'y':
+# if args.rasberry:
+if False:
     print("\n------------------------------------")
     print("Installing Aptitude dependencies...")
     for cmd in raspi_commands:
@@ -47,8 +55,7 @@ print("\n------------------------------------")
 
 app_title='GUI Print Server'
 
-opt = input("App title >")
-if opt != '': app_title = opt
+# if args.name : app_title = args.name
 
 x = Settings(
     id=1,
